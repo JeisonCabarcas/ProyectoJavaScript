@@ -12,6 +12,18 @@ boton.addEventListener("click", function () {
         botonEliminar.appendChild(document.createTextNode("Eliminar"));
         botonEliminar.onclick= Eliminar;
         li.appendChild(botonEliminar);
+    } 
+})
+input.addEventListener("keypress",function(evento){
+    if(evento.keyCode === 13){
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(input.value));
+        ul.appendChild(li);
+        input.value = "";
+        var botonEliminar=document.createElement("button");
+        botonEliminar.appendChild(document.createTextNode("Eliminar"));
+        botonEliminar.onclick= Eliminar;
+        li.appendChild(botonEliminar);
     }
 })
 
