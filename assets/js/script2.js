@@ -1,3 +1,7 @@
+let usuarioPrompt = prompt("Ingrese su usuario");
+let contraseñaPrompt = prompt("Ingrese su contraseña");
+
+
 let usuarios = [
     {
         usuarioNombre: "jeison",
@@ -49,23 +53,21 @@ let cuenta = [
 function loggin(user, pass) {
     let tagUser = 0;
     let tagID = 0;
+    let control=0;
     for (let i = 0; i < 5; i++) {
         tagUser++;
         if (user.toLowerCase() === usuarios[i].usuarioNombre && pass === usuarios[i].contraseña) {
-            tagID = tagUser-1;
+            tagID = tagUser - 1;
             alert("Hola " + cuenta[tagID].nombre + " su saldo es: " + cuenta[tagID].saldo);
             console.log("Hola " + cuenta[tagID].nombre + " su saldo es: " + cuenta[tagID].saldo);
-        }else if(tagUser>=5){
-            alert("Ops, No te encuentras registrado en nuestro sistema");
-            console.log("Ops, No te encuentras registrado en nuestro sistema");
+            control=1;
+        } 
+        if (tagUser===5 && control === 0) {
+            alert("Ops, tu usuario o contrasela es inconrrecto");
+            console.log("Ops, tu usuario o contrasela es inconrrecto");
+           
         }
     }
-   
+
 };
-
-
-let usuarioPrompt = prompt("Ingrese su usuario");
-let contraseñaPrompt = prompt("Ingrese su contraseña");
-
 loggin(usuarioPrompt, contraseñaPrompt);
-//console.log(usuarioPrompt.toLowerCase());//
